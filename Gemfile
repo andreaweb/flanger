@@ -29,10 +29,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'wdm', '>=0.1.0'
+gem 'binding_of_caller'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'bootstrap'
+gem 'jquery-rails'
 gem 'bulma-rails', '~> 0.6.1'
 gem 'simple_form', '~> 3.5'
 gem 'devise', '~> 4.4'
