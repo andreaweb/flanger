@@ -17,9 +17,8 @@
 $link: #444;
 $link-hover: #222;
 
-@import "bulma";
 @import "functions";
-
+@import "bootstrap";
 
 .notification {
   border-radius: 0;
