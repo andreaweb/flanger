@@ -35,7 +35,6 @@ gem 'binding_of_caller'
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap'
 gem 'jquery-rails'
-gem 'bulma-rails', '~> 0.6.1'
 gem 'simple_form', '~> 3.5'
 gem 'devise', '~> 4.4'
 gem 'gravatar_image_tag', '~> 1.2'
