@@ -7,15 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = User.new(
-  id: 5,
+  id: 10,
   name: "Andrea",
-  email: "ashirayukan@gmail.com",
+  email: "e@gmail.com",
   password: "password",
   password_confirmation: "password"
 )
 user.save!
 
-Instrument.create!([{
+Product.create!([{
   title: "Paul Reed Smith Paul's Guitar 2013",
   brand: "PRS",
   model: "Paul Reed Smith Paul's Guitar",
@@ -23,7 +23,7 @@ Instrument.create!([{
   condition: "Excellent",
   finish: "Red",
   price: "2999",
-  image: Rails.root.join("app/assets/images/instrument1.jpg").open,
+  image: Rails.root.join("app/assets/images/product1.jpg").open,
   user_id: user.id
 },
 {
@@ -34,19 +34,19 @@ Instrument.create!([{
   condition: "Used",
   finish: "Red",
   price: "2595",
-  image: Rails.root.join("app/assets/images/instrument2.jpg").open,
+  image: Rails.root.join("app/assets/images/product2.jpg").open,
   user_id: user.id
 },
 {
   title: "Suhr Classic Antique Pro SSS Limited - Surf Green Over 3 Tone Sunburst",
   brand: "Suhr",
   model: "Antique Pro SSS Limited",
-  description: "Our customers have asked for an instrument that has a vintage look and feel, without sacrificing playability and tone. Enter the Classic Antique™. We designed this guitar to ensure it preserves the spirit of a vintage instrument while performing like a Suhr. Impeccable craftsmanship and attention to detail ensure that every neck pocket is tight, every fret is perfectly dressed, and that every instrument is ready for peak performance before leaving our facility.
+  description: "Our customers have asked for an product that has a vintage look and feel, without sacrificing playability and tone. Enter the Classic Antique™. We designed this guitar to ensure it preserves the spirit of a vintage product while performing like a Suhr. Impeccable craftsmanship and attention to detail ensure that every neck pocket is tight, every fret is perfectly dressed, and that every product is ready for peak performance before leaving our facility.
 The nitro-cellulose lacquer finish and our proprietary antiquing process make each Classic Antique™ feel like it has been loved for years. The Classic Antique now includes: our innovative SSCII (Silent Single-Coil) hum cancelling system, a vintage tinted nitrocellulose neck with stainless steel frets, and a Maple fingerboard option.",
   condition: "New",
   finish: "Seafoam",
   price: "2845",
-  image: Rails.root.join("app/assets/images/instrument3.jpg").open,
+  image: Rails.root.join("app/assets/images/product3.jpg").open,
   user_id: user.id
 },
 {
@@ -57,18 +57,18 @@ The nitro-cellulose lacquer finish and our proprietary antiquing process make ea
   condition: "New",
   finish: "Clear",
   price: "960",
-  image: Rails.root.join("app/assets/images/instrument4.jpg").open,
+  image: Rails.root.join("app/assets/images/product4.jpg").open,
   user_id: user.id
 },
 {
   title: "Gibson SG Special",
   brand: "Gibson",
   model: "SG",
-  description: "The Gibson SG Special Faded was born from a variety of small changes made to Gibson instruments over the course of 50-plus years. The SG Special evolved from the Les Paul Special in the early '60s, and was meant to be a less expensive, stripped-down version of the SG Standard for no-frills players. The SG Special Faded, released in 2002 and still in production today, implemented another cost-reducing measure: the use of a light satin finish. Those digging the SG body shape but who don't need unnecessary bells and whistles may want to take a look at the Gibson SG Special Faded. ",
+  description: "The Gibson SG Special Faded was born from a variety of small changes made to Gibson products over the course of 50-plus years. The SG Special evolved from the Les Paul Special in the early '60s, and was meant to be a less expensive, stripped-down version of the SG Standard for no-frills players. The SG Special Faded, released in 2002 and still in production today, implemented another cost-reducing measure: the use of a light satin finish. Those digging the SG body shape but who don't need unnecessary bells and whistles may want to take a look at the Gibson SG Special Faded. ",
   condition: "Used",
   finish: "Red",
   price: "599",
-  image: Rails.root.join("app/assets/images/instrument5.jpg").open,
+  image: Rails.root.join("app/assets/images/product5.jpg").open,
   user_id: user.id
 },
 {
@@ -79,6 +79,6 @@ The nitro-cellulose lacquer finish and our proprietary antiquing process make ea
   condition: "Used",
   finish: "Yellow",
   price: "799",
-  image: Rails.root.join("app/assets/images/instrument6.jpg").open,
+  image: Rails.root.join("app/assets/images/product6.jpg").open,
   user_id: user.id
 }])

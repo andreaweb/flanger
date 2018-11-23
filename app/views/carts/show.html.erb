@@ -7,8 +7,8 @@
         <span class="f5">Total:</span> <%= number_to_currency(@cart.total_price) %>
       </h4>
       <%= link_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "btn btn-danger" %>
-      <%= link_to 'Keep Shopping', instruments_path, class: 'btn btn-primary' %>
-      <%= link_to 'Finish Purchase', instruments_path, class: 'btn btn-success' %>
+      <%= link_to 'Keep Shopping', products_path, class: 'btn btn-primary' %>
+      <%= link_to 'Finish Purchase', products_path, class: 'btn btn-success' %>
     </div>
   </div>
 </section>

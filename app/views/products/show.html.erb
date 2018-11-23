@@ -1,0 +1,73 @@
+<% content_for :body_class, 'bg-light' %>
+
+<section>
+  <div class="row">
+    <div class="col-md">
+      <h1><%= @product.title %></h1>
+
+      <div class="pv3">
+        <% if @product.brand? %>
+        <span class="inline-block pr3 badge badge-dark"><%= @product.brand %></span>
+        <% end %>
+
+        <span class="inline-block pr3 badge badge-dark"><%= @product.model %></span>
+
+        <% if @product.condition? %>
+        <span class="inline-block pr3 badge badge-dark"><%= @product.condition %></span>
+        <% end %>
+      </div>
+      
+      <div>
+        <%= image_tag(@product.image_url(:default), class: "img-fluid") %>
+      </div>
+
+      <div class="pa4 mt3 bg-white border-radius-3">
+
+        <h3>Description</h3>
+        <%= @product.description %>
+
+
+        <h3 class="pt5">Product Specs</h3>
+
+        <table class="table table-striped">
+          <% if @product.condition %>
+          <tr>
+            <td>Condition:</td>
+            <td><%= @product.condition %></td>
+          </tr>
+          <% end %>
+
+          <% if @product.finish %>
+            <tr>
+              <td>Finish:</td>
+              <td><%= @product.finish %></td>
+            </tr>
+          <% end %>
+
+          <% if @product.brand %>
+            <tr>
+              <td>Brand:</td>
+              <td><%= @product.brand %></td>
+            </tr>
+          <% end %>
+
+          <tr>
+            <td>Model:</td>
+            <td><%= @product.model %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="bg-white pa4 border-radius-3">
+        <h4><%= number_to_currency(@product.price) %></h4>
+        <p class="mb4">Sold by <%= @product.user.name %></p>
+        <% if product_author(@product) %>
+          <%= link_to 'Edit', edit_product_path(@product), class: 'btn btn-primary' %>
+          <% else %>
+          <%= button_to 'Add to cart', line_items_path(product_id: @product), class: 'btn btn-success' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

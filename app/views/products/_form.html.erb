@@ -1,0 +1,103 @@
+<div>
+  <div class="row">
+    <%= simple_form_for @product, html: { multipart: true } do |f| %>
+      <%= f.error_notification %>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+              <%= f.input :title , required: true, input_html: { class: "form-control"}, wrapper: false, label_html: { class:"" } %>
+          </div>
+
+          <div class="col-md-6 mb-3">
+              <%= f.input :price, required: true, input_html: { class:"form-control", maxlength: 7  }, wrapper: false, label_html: { class:"" } %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 mb-3">
+            <%= f.input :model, required: true, input_html: { class:"form-control" }, wrapper: false, label_html: { class:"" } %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 mb-3">
+            <%= f.input :description, required: true, input_html: { class:"form-control" }, wrapper: false, label_html: { class:"" } %>
+          </div>
+        </div>
+
+        <div>
+          <div class="row">
+            <div class="col-md-12 mb-3">
+              <label>Brand
+                <span>
+                  <i class="fa fa-tag"></i>
+                </span>
+              </label>
+              <div>
+                <span>
+                  <%= f.input_field :brand, collection: product::BRAND, class:"custom-select d-block w-100",prompt: "Select brand" %>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 mb-3">
+              <label>Finish
+                <span>
+                  <i class="fa fa-paint-brush"></i>
+                </span>
+              </label>
+              <div>
+                <span>
+                  <%= f.input_field :finish, collection: product::FINISH, class:"custom-select d-block w-100", prompt: "Select finish" %>
+                </span>
+                
+              </div>
+            </div>
+           </div>
+
+          <div class="row">
+            <div class="col-md-12 mb-3">
+              <label>Condition
+                <span>
+                  <i class="fa fa-paint-brush"></i>
+                </span>
+              </label>
+              <div>
+                <span>
+                  <%= f.input_field :condition, collection: product::CONDITION, class:"custom-select d-block w-100", prompt: "Select condition" %>
+                </span>
+                
+              </div>
+            </div>
+           </div>
+         </div>
+
+        <div>
+          <div>
+            <label>Add images</label>
+              <div>
+              <label>
+                <%= f.input :image, as: :file, input_html: { class:"" }, label: false, wrapper: false %>
+                  <span>
+                    <span><i class="fa fa-upload"></i></span>
+                    <span>Choose a file…</span>
+                  </span>
+              </label>
+              </div>
+            </div>
+          </div>
+          <output id="list"></output>
+        <hr />
+
+        <div>
+          <div>
+            <%= f.button :submit, class: 'btn btn-primary' %>
+            <%= link_to 'Cancel', products_path, class:'btn btn-danger' %>
+          </div>
+        </div>
+
+      <% end %>
+  </div>
+</div>
