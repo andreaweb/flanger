@@ -1,15 +1,11 @@
 <% content_for :header do %>
-<section>
+<section class="container">
   <div>
-    <div>
-      <h1>
-        Sell an Instrument
-      </h1>
+    <div class="row">
+      <h4>Sell a Doll</h4>
     </div>
   </div>
 </section>
 <% end %>
 
-<div class="pv4">
-  <%= render 'form', instrument: @instrument %>
-</div>
+<%= render 'form', instrument: @instrument %>

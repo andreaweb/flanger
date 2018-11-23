@@ -1,73 +1,73 @@
 <% content_for :body_class, 'bg-light' %>
 
 <section>
-  <div>
-    <div>
+  <div class="row">
+    <div class="col-md">
       <h1><%= @instrument.title %></h1>
 
-      <ul class="pv1">
+      <div class="pv3">
         <% if @instrument.brand? %>
-        <li class="inline-block pr3"><%= @instrument.brand %></li>
+        <span class="inline-block pr3 badge badge-dark"><%= @instrument.brand %></span>
         <% end %>
 
-        <li class="inline-block pr3"><%= @instrument.model %></li>
+        <span class="inline-block pr3 badge badge-dark"><%= @instrument.model %></span>
 
         <% if @instrument.condition? %>
-        <li class="inline-block pr3"><%= @instrument.condition %></li>
+        <span class="inline-block pr3 badge badge-dark"><%= @instrument.condition %></span>
         <% end %>
-      </ul>
-
+      </div>
+      
       <div>
         <%= image_tag(@instrument.image_url(:default), class: "img-fluid") %>
       </div>
 
       <div class="pa4 mt3 bg-white border-radius-3">
 
-      <h3>Description</h3>
-      <%= @instrument.description %>
+        <h3>Description</h3>
+        <%= @instrument.description %>
 
 
-      <h3 class="pt5">Product Specs</h3>
+        <h3 class="pt5">Product Specs</h3>
 
-      <table">
-        <% if @instrument.condition %>
-        <tr>
-          <td>Condition:</td>
-          <td><%= @instrument.condition %></td>
-        </tr>
-        <% end %>
-
-        <% if @instrument.finish %>
+        <table class="table table-striped">
+          <% if @instrument.condition %>
           <tr>
-            <td>Finish:</td>
-            <td><%= @instrument.finish %></td>
+            <td>Condition:</td>
+            <td><%= @instrument.condition %></td>
           </tr>
-        <% end %>
+          <% end %>
 
-        <% if @instrument.brand %>
+          <% if @instrument.finish %>
+            <tr>
+              <td>Finish:</td>
+              <td><%= @instrument.finish %></td>
+            </tr>
+          <% end %>
+
+          <% if @instrument.brand %>
+            <tr>
+              <td>Brand:</td>
+              <td><%= @instrument.brand %></td>
+            </tr>
+          <% end %>
+
           <tr>
-            <td>Brand:</td>
-            <td><%= @instrument.brand %></td>
+            <td>Model:</td>
+            <td><%= @instrument.model %></td>
           </tr>
-        <% end %>
-
-        <tr>
-          <td>Model:</td>
-          <td><%= @instrument.model %></td>
-        </tr>
-      </table>
+        </table>
+      </div>
     </div>
-    </div>
-    <div>
+    <div class="col-md">
       <div class="bg-white pa4 border-radius-3">
         <h4><%= number_to_currency(@instrument.price) %></h4>
         <p class="mb4">Sold by <%= @instrument.user.name %></p>
-        <%= button_to 'Add to cart', line_items_path(instrument_id: @instrument), class: '' %>
+        <% if instrument_author(@instrument) %>
+          <%= link_to 'Edit', edit_instrument_path(@instrument), class: 'btn btn-primary' %>
+          <% else %>
+          <%= button_to 'Add to cart', line_items_path(instrument_id: @instrument), class: 'btn btn-success' %>
+        <% end %>
       </div>
     </div>
   </div>
-
-  <% if instrument_author(@instrument) %>
-    <%= link_to 'Edit', edit_instrument_path(@instrument), class: '' %>
-  <% end %>
 </section>
